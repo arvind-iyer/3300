@@ -48,51 +48,15 @@ int main(void)
                          RCC_APB2Periph_GPIOC | RCC_APB2Periph_GPIOD |
                          RCC_APB2Periph_GPIOE | RCC_APB2Periph_GPIOF | 
                          RCC_APB2Periph_GPIOG, DISABLE);  
-//up till now in this main function was the given initialization from the labs of elec 3300
   
-servo_init();
-uart_init(COM3,9600);
-//
-
-
-//
-servo_control(12, 90);
-Delayms(200);
-
-//servo_control(3, 150);
-//Delayms(200);
-//
-//Delayms(800);
-//
-
-//servo_control(2, -30);
-//Delayms(200);
-//servo_control(1, 90);
-//Delayms(200);
-//
-
-while(1)
-{
-  //  u8 rec_data=uart_rx_byte(COM3);
-//  servo_control(1,rec_data);
-//  uart_tx_byte(COM3,rec_data);
-
-//servo_control(1, 25);
-//Delayms(200);
-//servo_control(2, 90);
-//Delayms(200);
-//
-//servo_control(1, 120);
-//Delayms(200);  
-//servo_control(2, -60);
-//Delayms(200);
-
-}
- 
+  servo_init();
+  uart_init(COM3,9600);
   
-
-
-   
+  move_robot_forward();
+  
+  while(1)
+  { 
+  }     
 }
 
 
