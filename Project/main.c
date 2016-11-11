@@ -1,7 +1,7 @@
 /* Includes ------------------------------------------------------------------*/
 #include "stm32f10x.h"
 #include "uart.h"
-#include "servo.h"
+//#include "servo.h"
 #include "spider.h"
 
 void LongDelay(u32 nCount)
@@ -9,13 +9,7 @@ void LongDelay(u32 nCount)
   for(; nCount != 0; nCount--);
 }
 
-void Delayms(u32 m)
-{
-  u32 i;
-  
-  for(; m != 0; m--)	
-       for (i=0; i<50000; i++);
-}
+
 GPIO_InitTypeDef GPIO_InitStructure;
 TIM_TimeBaseInitTypeDef  TIM_TimeBaseStructure;
 TIM_OCInitTypeDef  TIM_OCInitStructure;
@@ -50,12 +44,16 @@ int main(void)
                          RCC_APB2Periph_GPIOG, DISABLE);  
   
   servo_init();
-  uart_init(COM3,9600);
-  
-  move_robot_forward();
+//  uart_init(COM3,9600);
+  spider_init();
+  Delayms(80);
   
   while(1)
-  { 
+  {
+    move_robot_forward();
+//    Delayms(20);
+//    move_robot_backward();
+//    Delayms(20);
   }     
 }
 

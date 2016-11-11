@@ -1,3 +1,9 @@
+#ifndef _SPIDER_H
+#define _SPIDER_H
+
+#include "stm32f10x.h"
+#include "servo.h"
+
 typedef struct {
   int init;
   int final;
@@ -10,22 +16,12 @@ enum legs {
   BACK_RIGHT
 };
 
+void Delayms(u32 m);
 
-Servo servos[12] = {
-  {25,120},
-  {90,-60},
-  {150,0},
-  {-40,-100},
-  {210,310},
-  {160,280},
-  {220,90},
-  {250,320},
-  {120,240},
-  {50,200},
-  {240,180},
-  {90,0}
-};
-
-void move_leg_forward(enum leg, int delay);
-void move_leg_backward(enum leg, int delay);
+void spider_init(void);
+void move_leg_forward(int leg, int delay);
+void move_leg_backward(int leg, int delay);
 void move_robot_forward(void);
+void move_robot_backward(void);
+
+#endif

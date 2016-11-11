@@ -839,6 +839,9 @@
       <name>$PROJ_DIR$\..\servo.c</name>
     </file>
     <file>
+      <name>$PROJ_DIR$\..\spider.c</name>
+    </file>
+    <file>
       <name>$PROJ_DIR$\..\stm32f10x_conf.h</name>
     </file>
     <file>
@@ -846,9 +849,6 @@
     </file>
     <file>
       <name>$PROJ_DIR$\..\stm32f10x_it.h</name>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\..\..\uart.c</name>
     </file>
   </group>
 </project>

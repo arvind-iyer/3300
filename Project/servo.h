@@ -1,3 +1,5 @@
+#ifndef _SERVO_H
+#define _SERVO_H
 #include "stm32f10x.h"
 
 #define FL_FOOT  1 //25 -> 120(UP)  B6
@@ -20,3 +22,5 @@
 
 void servo_init(void);
 void servo_control(int servo_id, int val);
+
+#endif
