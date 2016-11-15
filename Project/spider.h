@@ -24,4 +24,8 @@ void move_leg_backward(int leg, int delay);
 void move_robot_forward(void);
 void move_robot_backward(void);
 
+
+
+
+
 #endif
