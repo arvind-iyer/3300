@@ -74,13 +74,8 @@ extern COM_TypeDef printf_COMx;
 
 // COM1=USART1, COM2=USART2; ..., COM5=UART5
 void uart_init(COM_TypeDef COM, u32 br);
-void uart_interrupt(COM_TypeDef COM);
-
-void uart_printf_enable(COM_TypeDef COM);
-void uart_printf_disable(void);
 
 void uart_tx_byte(COM_TypeDef COM, const uint8_t data);
-void uart_tx(COM_TypeDef COM, const uint8_t * tx_buf, ...);
-
+u8 uart_rx(void);
 uint8_t uart_rx_byte(COM_TypeDef COM);
 #endif		/* __UART_H */

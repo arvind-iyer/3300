@@ -22,5 +22,4 @@
 
 void servo_init(void);
 void servo_control(int servo_id, int val);
-
 #endif

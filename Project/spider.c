@@ -6,14 +6,14 @@
 #define JOINTS 3
 #define SPEED 50
 
-
+//IGNORE
 Servo servos[12] = {
-  {40,120},//1
-  {40,120}, 
-  {100,150},
-  {0,-100},//4
-  {170,310},
-  {160,110},
+  {1200,1200},//1
+  {1200,800}, 
+  {1400,1000},
+  {1000,1000},//4
+  {2000,2500},
+  {2000,2500},
   {230,90}, //7
   {220,320},
   {100,0},
@@ -36,8 +36,8 @@ void spider_init(void) {
   }
 }
 void move_leg_forward(int  leg, int delay) {
-  int this_leg = leg*JOINTS;
-  for(int i = 1; i <= JOINTS; i++) {
+  int this_leg = leg*3;
+  for(int i = 2; i <= 3; i++) {
     servo_control(this_leg + i, servos[this_leg+i].final);
     Delayms(delay);
   }
